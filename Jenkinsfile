@@ -2,11 +2,11 @@ pipeline {
     agent { 
         node {
             label 'first-template'
-            }
-      }
+        }
+    }
 
     triggers {
-      pollSCM '* * * * *'
+        pollSCM '* * * * *'
     }
   
     stages {
@@ -16,6 +16,7 @@ pipeline {
                 sh '''
                 echo "doing build stuff.."
                 ls
+                '''
             }
         }
         stage('Test') {
